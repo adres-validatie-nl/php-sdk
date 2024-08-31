@@ -1,6 +1,6 @@
 # OpenAPIClient-php
 
-API documentation for my adres-validatie.nl
+API documentation for api.adres-validatie.nl
 
 
 ## Installation & Usage
