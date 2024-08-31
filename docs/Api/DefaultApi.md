@@ -21,7 +21,7 @@ accountPost($email, $webhook): \OpenAPI\Client\Model\AccountPost200Response
 
 
 
-Sign up endpoint for new users
+Sign up endpoint for new users (does not require authentication)
 
 ### Example
 
