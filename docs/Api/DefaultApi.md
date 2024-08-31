@@ -30,15 +30,11 @@ Sign up endpoint for new users
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure OAuth2 access token for authorization: Oauth2
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new OpenAPI\Client\Api\DefaultApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 $email = 'email_example'; // string | The user's email
 $webhook = 'webhook_example'; // string | The url webhook messages will be sent to
@@ -64,7 +60,7 @@ try {
 
 ### Authorization
 
-[Oauth2](../../README.md#Oauth2)
+No authorization required
 
 ### HTTP request headers
 
