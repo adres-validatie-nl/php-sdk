@@ -8,7 +8,7 @@ API documentation for my adres-validatie.nl
 ### Requirements
 
 PHP 7.4 and later.
-Also work with PHP 8.0.
+Also works with PHP 8.0.
 
 ### Composer
 
@@ -73,7 +73,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost*
+All URIs are relative to *https://api.adres-validatie.nl*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
