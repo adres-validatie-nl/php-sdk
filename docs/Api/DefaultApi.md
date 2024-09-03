@@ -4,14 +4,72 @@ All URIs are relative to https://api.adres-validatie.nl, except if the operation
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**accessTokenPost()**](DefaultApi.md#accessTokenPost) | **POST** /access-token |  |
 | [**accountPost()**](DefaultApi.md#accountPost) | **POST** /account |  |
 | [**accountWebhookPut()**](DefaultApi.md#accountWebhookPut) | **PUT** /account/webhook |  |
 | [**fileAddressesCsvGet()**](DefaultApi.md#fileAddressesCsvGet) | **GET** /file/addresses.csv |  |
 | [**fileAddressesZipGet()**](DefaultApi.md#fileAddressesZipGet) | **GET** /file/addresses.zip |  |
-| [**helloWorldGet()**](DefaultApi.md#helloWorldGet) | **GET** /hello-world |  |
 | [**stripeCheckoutSessionPost()**](DefaultApi.md#stripeCheckoutSessionPost) | **POST** /stripe/checkout/session |  |
 | [**stripePortalSessionPost()**](DefaultApi.md#stripePortalSessionPost) | **POST** /stripe/portal/session |  |
 
+
+## `accessTokenPost()`
+
+```php
+accessTokenPost($client_id, $client_secret): \OpenAPI\Client\Model\AccessTokenPost200Response
+```
+
+
+
+Creates a short-lived bearer token for API consumers
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+$apiInstance = new OpenAPI\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$client_id = 'client_id_example'; // string | The account's client id
+$client_secret = 'client_secret_example'; // string | The account's client secret
+
+try {
+    $result = $apiInstance->accessTokenPost($client_id, $client_secret);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->accessTokenPost: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **client_id** | **string**| The account&#39;s client id | |
+| **client_secret** | **string**| The account&#39;s client secret | |
+
+### Return type
+
+[**\OpenAPI\Client\Model\AccessTokenPost200Response**](../Model/AccessTokenPost200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: `application/x-www-form-urlencoded`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `accountPost()`
 
@@ -21,7 +79,7 @@ accountPost($email, $webhook): \OpenAPI\Client\Model\AccountPost200Response
 
 
 
-Sign up endpoint for new users (does not require authentication)
+Sign up endpoint for new users (does not require authorization)
 
 ### Example
 
@@ -240,62 +298,6 @@ This endpoint does not need any parameter.
 
 - **Content-Type**: Not defined
 - **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `helloWorldGet()`
-
-```php
-helloWorldGet()
-```
-
-
-
-Welcome to swagger-jsdoc!
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-// Configure OAuth2 access token for authorization: Oauth2
-$config = OpenAPI\Client\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
-
-$apiInstance = new OpenAPI\Client\Api\DefaultApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-
-try {
-    $apiInstance->helloWorldGet();
-} catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->helloWorldGet: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[Oauth2](../../README.md#Oauth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)

@@ -52,14 +52,14 @@ $apiInstance = new OpenAPI\Client\Api\DefaultApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$email = 'email_example'; // string | The user's email
-$webhook = 'webhook_example'; // string | The url webhook messages will be sent to
+$client_id = 'client_id_example'; // string | The account's client id
+$client_secret = 'client_secret_example'; // string | The account's client secret
 
 try {
-    $result = $apiInstance->accountPost($email, $webhook);
+    $result = $apiInstance->accessTokenPost($client_id, $client_secret);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling DefaultApi->accountPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling DefaultApi->accessTokenPost: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -70,21 +70,23 @@ All URIs are relative to *https://api.adres-validatie.nl*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DefaultApi* | [**accessTokenPost**](docs/Api/DefaultApi.md#accesstokenpost) | **POST** /access-token | 
 *DefaultApi* | [**accountPost**](docs/Api/DefaultApi.md#accountpost) | **POST** /account | 
 *DefaultApi* | [**accountWebhookPut**](docs/Api/DefaultApi.md#accountwebhookput) | **PUT** /account/webhook | 
 *DefaultApi* | [**fileAddressesCsvGet**](docs/Api/DefaultApi.md#fileaddressescsvget) | **GET** /file/addresses.csv | 
 *DefaultApi* | [**fileAddressesZipGet**](docs/Api/DefaultApi.md#fileaddresseszipget) | **GET** /file/addresses.zip | 
-*DefaultApi* | [**helloWorldGet**](docs/Api/DefaultApi.md#helloworldget) | **GET** /hello-world | 
 *DefaultApi* | [**stripeCheckoutSessionPost**](docs/Api/DefaultApi.md#stripecheckoutsessionpost) | **POST** /stripe/checkout/session | 
 *DefaultApi* | [**stripePortalSessionPost**](docs/Api/DefaultApi.md#stripeportalsessionpost) | **POST** /stripe/portal/session | 
 
 ## Models
 
+- [AccessTokenPost200Response](docs/Model/AccessTokenPost200Response.md)
 - [AccountPost200Response](docs/Model/AccountPost200Response.md)
 - [AccountPost201Response](docs/Model/AccountPost201Response.md)
 - [AccountPost400Response](docs/Model/AccountPost400Response.md)
 - [AccountPost500Response](docs/Model/AccountPost500Response.md)
 - [AccountWebhookPut200Response](docs/Model/AccountWebhookPut200Response.md)
+- [AccountWebhookPut200ResponseAccount](docs/Model/AccountWebhookPut200ResponseAccount.md)
 - [AccountWebhookPut401Response](docs/Model/AccountWebhookPut401Response.md)
 - [AccountWebhookPut500Response](docs/Model/AccountWebhookPut500Response.md)
 - [FileAddressesCsvGet200Response](docs/Model/FileAddressesCsvGet200Response.md)

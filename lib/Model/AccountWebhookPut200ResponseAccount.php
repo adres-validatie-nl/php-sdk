@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountWebhookPut200Response
+ * AccountWebhookPut200ResponseAccount
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * AccountWebhookPut200Response Class Doc Comment
+ * AccountWebhookPut200ResponseAccount Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -40,7 +40,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountWebhookPut200ResponseAccount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = '_account_webhook_put_200_response';
+    protected static $openAPIModelName = '_account_webhook_put_200_response_account';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account' => '\OpenAPI\Client\Model\AccountWebhookPut200ResponseAccount'
+        'email' => 'string',
+        'webhook' => 'string'
     ];
 
     /**
@@ -68,7 +69,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account' => null
+        'email' => null,
+        'webhook' => null
     ];
 
     /**
@@ -77,7 +79,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'account' => false
+        'email' => false,
+        'webhook' => false
     ];
 
     /**
@@ -166,7 +169,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'account' => 'account'
+        'email' => 'email',
+        'webhook' => 'webhook'
     ];
 
     /**
@@ -175,7 +179,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'account' => 'setAccount'
+        'email' => 'setEmail',
+        'webhook' => 'setWebhook'
     ];
 
     /**
@@ -184,7 +189,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'account' => 'getAccount'
+        'email' => 'getEmail',
+        'webhook' => 'getWebhook'
     ];
 
     /**
@@ -244,7 +250,8 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('account', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('webhook', $data ?? [], null);
     }
 
     /**
@@ -290,28 +297,55 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets account
+     * Gets email
      *
-     * @return \OpenAPI\Client\Model\AccountWebhookPut200ResponseAccount|null
+     * @return string|null
      */
-    public function getAccount()
+    public function getEmail()
     {
-        return $this->container['account'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets account
+     * Sets email
      *
-     * @param \OpenAPI\Client\Model\AccountWebhookPut200ResponseAccount|null $account account
+     * @param string|null $email The email of the created account
      *
      * @return self
      */
-    public function setAccount($account)
+    public function setEmail($email)
     {
-        if (is_null($account)) {
-            throw new \InvalidArgumentException('non-nullable account cannot be null');
+        if (is_null($email)) {
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
-        $this->container['account'] = $account;
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets webhook
+     *
+     * @return string|null
+     */
+    public function getWebhook()
+    {
+        return $this->container['webhook'];
+    }
+
+    /**
+     * Sets webhook
+     *
+     * @param string|null $webhook The url webhook messages will be sent to
+     *
+     * @return self
+     */
+    public function setWebhook($webhook)
+    {
+        if (is_null($webhook)) {
+            throw new \InvalidArgumentException('non-nullable webhook cannot be null');
+        }
+        $this->container['webhook'] = $webhook;
 
         return $this;
     }

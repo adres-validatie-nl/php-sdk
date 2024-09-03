@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountWebhookPut200Response
+ * AccessTokenPost200Response
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * AccountWebhookPut200Response Class Doc Comment
+ * AccessTokenPost200Response Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -40,7 +40,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccessTokenPost200Response implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = '_account_webhook_put_200_response';
+    protected static $openAPIModelName = '_access_token_post_200_response';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account' => '\OpenAPI\Client\Model\AccountWebhookPut200ResponseAccount'
+        'token_type' => 'string',
+        'expires_in' => 'float',
+        'access_token' => 'string'
     ];
 
     /**
@@ -68,7 +70,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account' => null
+        'token_type' => null,
+        'expires_in' => null,
+        'access_token' => null
     ];
 
     /**
@@ -77,7 +81,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'account' => false
+        'token_type' => false,
+        'expires_in' => false,
+        'access_token' => false
     ];
 
     /**
@@ -166,7 +172,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'account' => 'account'
+        'token_type' => 'token_type',
+        'expires_in' => 'expires_in',
+        'access_token' => 'access_token'
     ];
 
     /**
@@ -175,7 +183,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'account' => 'setAccount'
+        'token_type' => 'setTokenType',
+        'expires_in' => 'setExpiresIn',
+        'access_token' => 'setAccessToken'
     ];
 
     /**
@@ -184,7 +194,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'account' => 'getAccount'
+        'token_type' => 'getTokenType',
+        'expires_in' => 'getExpiresIn',
+        'access_token' => 'getAccessToken'
     ];
 
     /**
@@ -244,7 +256,9 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('account', $data ?? [], null);
+        $this->setIfExists('token_type', $data ?? [], null);
+        $this->setIfExists('expires_in', $data ?? [], null);
+        $this->setIfExists('access_token', $data ?? [], null);
     }
 
     /**
@@ -290,28 +304,82 @@ class AccountWebhookPut200Response implements ModelInterface, ArrayAccess, \Json
 
 
     /**
-     * Gets account
+     * Gets token_type
      *
-     * @return \OpenAPI\Client\Model\AccountWebhookPut200ResponseAccount|null
+     * @return string|null
      */
-    public function getAccount()
+    public function getTokenType()
     {
-        return $this->container['account'];
+        return $this->container['token_type'];
     }
 
     /**
-     * Sets account
+     * Sets token_type
      *
-     * @param \OpenAPI\Client\Model\AccountWebhookPut200ResponseAccount|null $account account
+     * @param string|null $token_type token_type
      *
      * @return self
      */
-    public function setAccount($account)
+    public function setTokenType($token_type)
     {
-        if (is_null($account)) {
-            throw new \InvalidArgumentException('non-nullable account cannot be null');
+        if (is_null($token_type)) {
+            throw new \InvalidArgumentException('non-nullable token_type cannot be null');
         }
-        $this->container['account'] = $account;
+        $this->container['token_type'] = $token_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets expires_in
+     *
+     * @return float|null
+     */
+    public function getExpiresIn()
+    {
+        return $this->container['expires_in'];
+    }
+
+    /**
+     * Sets expires_in
+     *
+     * @param float|null $expires_in expires_in
+     *
+     * @return self
+     */
+    public function setExpiresIn($expires_in)
+    {
+        if (is_null($expires_in)) {
+            throw new \InvalidArgumentException('non-nullable expires_in cannot be null');
+        }
+        $this->container['expires_in'] = $expires_in;
+
+        return $this;
+    }
+
+    /**
+     * Gets access_token
+     *
+     * @return string|null
+     */
+    public function getAccessToken()
+    {
+        return $this->container['access_token'];
+    }
+
+    /**
+     * Sets access_token
+     *
+     * @param string|null $access_token access_token
+     *
+     * @return self
+     */
+    public function setAccessToken($access_token)
+    {
+        if (is_null($access_token)) {
+            throw new \InvalidArgumentException('non-nullable access_token cannot be null');
+        }
+        $this->container['access_token'] = $access_token;
 
         return $this;
     }
