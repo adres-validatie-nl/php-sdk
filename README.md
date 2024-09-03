@@ -16,14 +16,8 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
 
 ```json
 {
-  "repositories": [
-    {
-      "type": "vcs",
-      "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
-    }
-  ],
   "require": {
-    "GIT_USER_ID/GIT_REPO_ID": "*@dev"
+    "adres-validatie-nl/php-sdk": "^1.0.0"
   }
 }
 ```
