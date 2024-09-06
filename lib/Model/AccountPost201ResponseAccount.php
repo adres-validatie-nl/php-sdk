@@ -1,6 +1,6 @@
 <?php
 /**
- * AccountPost201Response
+ * AccountPost201ResponseAccount
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \OpenAPI\Client\ObjectSerializer;
 
 /**
- * AccountPost201Response Class Doc Comment
+ * AccountPost201ResponseAccount Class Doc Comment
  *
  * @category Class
  * @package  OpenAPI\Client
@@ -40,7 +40,7 @@ use \OpenAPI\Client\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static $openAPIModelName = '_account_post_201_response';
+    protected static $openAPIModelName = '_account_post_201_response_account';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
-        'account' => '\OpenAPI\Client\Model\AccountPost201ResponseAccount'
+        'email' => 'string',
+        'webhook' => 'string',
+        'client_id' => 'string',
+        'client_token' => 'string',
+        'hmac_secret' => 'string'
     ];
 
     /**
@@ -68,7 +72,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'account' => null
+        'email' => null,
+        'webhook' => null,
+        'client_id' => null,
+        'client_token' => null,
+        'hmac_secret' => null
     ];
 
     /**
@@ -77,7 +85,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'account' => false
+        'email' => false,
+        'webhook' => false,
+        'client_id' => false,
+        'client_token' => false,
+        'hmac_secret' => false
     ];
 
     /**
@@ -166,7 +178,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
-        'account' => 'account'
+        'email' => 'email',
+        'webhook' => 'webhook',
+        'client_id' => 'client_id',
+        'client_token' => 'client_token',
+        'hmac_secret' => 'hmac_secret'
     ];
 
     /**
@@ -175,7 +191,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
-        'account' => 'setAccount'
+        'email' => 'setEmail',
+        'webhook' => 'setWebhook',
+        'client_id' => 'setClientId',
+        'client_token' => 'setClientToken',
+        'hmac_secret' => 'setHmacSecret'
     ];
 
     /**
@@ -184,7 +204,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
-        'account' => 'getAccount'
+        'email' => 'getEmail',
+        'webhook' => 'getWebhook',
+        'client_id' => 'getClientId',
+        'client_token' => 'getClientToken',
+        'hmac_secret' => 'getHmacSecret'
     ];
 
     /**
@@ -244,7 +268,11 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('account', $data ?? [], null);
+        $this->setIfExists('email', $data ?? [], null);
+        $this->setIfExists('webhook', $data ?? [], null);
+        $this->setIfExists('client_id', $data ?? [], null);
+        $this->setIfExists('client_token', $data ?? [], null);
+        $this->setIfExists('hmac_secret', $data ?? [], null);
     }
 
     /**
@@ -290,28 +318,136 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
 
 
     /**
-     * Gets account
+     * Gets email
      *
-     * @return \OpenAPI\Client\Model\AccountPost201ResponseAccount|null
+     * @return string|null
      */
-    public function getAccount()
+    public function getEmail()
     {
-        return $this->container['account'];
+        return $this->container['email'];
     }
 
     /**
-     * Sets account
+     * Sets email
      *
-     * @param \OpenAPI\Client\Model\AccountPost201ResponseAccount|null $account account
+     * @param string|null $email The email of the created account
      *
      * @return self
      */
-    public function setAccount($account)
+    public function setEmail($email)
     {
-        if (is_null($account)) {
-            throw new \InvalidArgumentException('non-nullable account cannot be null');
+        if (is_null($email)) {
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
-        $this->container['account'] = $account;
+        $this->container['email'] = $email;
+
+        return $this;
+    }
+
+    /**
+     * Gets webhook
+     *
+     * @return string|null
+     */
+    public function getWebhook()
+    {
+        return $this->container['webhook'];
+    }
+
+    /**
+     * Sets webhook
+     *
+     * @param string|null $webhook The url webhook messages will be sent to
+     *
+     * @return self
+     */
+    public function setWebhook($webhook)
+    {
+        if (is_null($webhook)) {
+            throw new \InvalidArgumentException('non-nullable webhook cannot be null');
+        }
+        $this->container['webhook'] = $webhook;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_id
+     *
+     * @return string|null
+     */
+    public function getClientId()
+    {
+        return $this->container['client_id'];
+    }
+
+    /**
+     * Sets client_id
+     *
+     * @param string|null $client_id The client id of the created account
+     *
+     * @return self
+     */
+    public function setClientId($client_id)
+    {
+        if (is_null($client_id)) {
+            throw new \InvalidArgumentException('non-nullable client_id cannot be null');
+        }
+        $this->container['client_id'] = $client_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets client_token
+     *
+     * @return string|null
+     */
+    public function getClientToken()
+    {
+        return $this->container['client_token'];
+    }
+
+    /**
+     * Sets client_token
+     *
+     * @param string|null $client_token The client token of the created account; this is provided one time only, and can be reset by signing in to the web portal
+     *
+     * @return self
+     */
+    public function setClientToken($client_token)
+    {
+        if (is_null($client_token)) {
+            throw new \InvalidArgumentException('non-nullable client_token cannot be null');
+        }
+        $this->container['client_token'] = $client_token;
+
+        return $this;
+    }
+
+    /**
+     * Gets hmac_secret
+     *
+     * @return string|null
+     */
+    public function getHmacSecret()
+    {
+        return $this->container['hmac_secret'];
+    }
+
+    /**
+     * Sets hmac_secret
+     *
+     * @param string|null $hmac_secret The hmac secret for the created account; used to verify the authenticity of webhook messages
+     *
+     * @return self
+     */
+    public function setHmacSecret($hmac_secret)
+    {
+        if (is_null($hmac_secret)) {
+            throw new \InvalidArgumentException('non-nullable hmac_secret cannot be null');
+        }
+        $this->container['hmac_secret'] = $hmac_secret;
 
         return $this;
     }

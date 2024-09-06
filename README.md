@@ -77,6 +77,7 @@ Class | Method | HTTP request | Description
 - [AccessTokenPost200Response](docs/Model/AccessTokenPost200Response.md)
 - [AccountPost200Response](docs/Model/AccountPost200Response.md)
 - [AccountPost201Response](docs/Model/AccountPost201Response.md)
+- [AccountPost201ResponseAccount](docs/Model/AccountPost201ResponseAccount.md)
 - [AccountPost400Response](docs/Model/AccountPost400Response.md)
 - [AccountPost500Response](docs/Model/AccountPost500Response.md)
 - [AccountWebhookPut200Response](docs/Model/AccountWebhookPut200Response.md)
