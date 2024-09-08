@@ -17,7 +17,7 @@ To install the bindings via [Composer](https://getcomposer.org/), add the follow
 ```json
 {
   "require": {
-    "adres-validatie-nl/php-sdk": "^1.0.0"
+    "adres-validatie-nl/php-sdk": "^1.3.0"
   }
 }
 ```

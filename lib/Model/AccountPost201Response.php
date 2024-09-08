@@ -57,6 +57,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @var string[]
       */
     protected static $openAPITypes = [
+        'code' => 'string',
         'account' => '\OpenAPI\Client\Model\AccountPost201ResponseAccount'
     ];
 
@@ -68,6 +69,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
+        'code' => null,
         'account' => null
     ];
 
@@ -77,6 +79,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
+        'code' => false,
         'account' => false
     ];
 
@@ -166,6 +169,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $attributeMap = [
+        'code' => 'code',
         'account' => 'account'
     ];
 
@@ -175,6 +179,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $setters = [
+        'code' => 'setCode',
         'account' => 'setAccount'
     ];
 
@@ -184,6 +189,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      * @var string[]
      */
     protected static $getters = [
+        'code' => 'getCode',
         'account' => 'getAccount'
     ];
 
@@ -244,6 +250,7 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('account', $data ?? [], null);
     }
 
@@ -288,6 +295,33 @@ class AccountPost201Response implements ModelInterface, ArrayAccess, \JsonSerial
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets code
+     *
+     * @return string|null
+     */
+    public function getCode()
+    {
+        return $this->container['code'];
+    }
+
+    /**
+     * Sets code
+     *
+     * @param string|null $code code
+     *
+     * @return self
+     */
+    public function setCode($code)
+    {
+        if (is_null($code)) {
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        }
+        $this->container['code'] = $code;
+
+        return $this;
+    }
 
     /**
      * Gets account
