@@ -60,7 +60,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         'email' => 'string',
         'webhook' => 'string',
         'client_id' => 'string',
-        'client_token' => 'string',
+        'client_secret' => 'string',
         'hmac_secret' => 'string'
     ];
 
@@ -75,7 +75,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         'email' => null,
         'webhook' => null,
         'client_id' => null,
-        'client_token' => null,
+        'client_secret' => null,
         'hmac_secret' => null
     ];
 
@@ -88,7 +88,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         'email' => false,
         'webhook' => false,
         'client_id' => false,
-        'client_token' => false,
+        'client_secret' => false,
         'hmac_secret' => false
     ];
 
@@ -181,7 +181,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         'email' => 'email',
         'webhook' => 'webhook',
         'client_id' => 'client_id',
-        'client_token' => 'client_token',
+        'client_secret' => 'client_secret',
         'hmac_secret' => 'hmac_secret'
     ];
 
@@ -194,7 +194,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         'email' => 'setEmail',
         'webhook' => 'setWebhook',
         'client_id' => 'setClientId',
-        'client_token' => 'setClientToken',
+        'client_secret' => 'setClientSecret',
         'hmac_secret' => 'setHmacSecret'
     ];
 
@@ -207,7 +207,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         'email' => 'getEmail',
         'webhook' => 'getWebhook',
         'client_id' => 'getClientId',
-        'client_token' => 'getClientToken',
+        'client_secret' => 'getClientSecret',
         'hmac_secret' => 'getHmacSecret'
     ];
 
@@ -271,7 +271,7 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
         $this->setIfExists('email', $data ?? [], null);
         $this->setIfExists('webhook', $data ?? [], null);
         $this->setIfExists('client_id', $data ?? [], null);
-        $this->setIfExists('client_token', $data ?? [], null);
+        $this->setIfExists('client_secret', $data ?? [], null);
         $this->setIfExists('hmac_secret', $data ?? [], null);
     }
 
@@ -399,28 +399,28 @@ class AccountPost201ResponseAccount implements ModelInterface, ArrayAccess, \Jso
     }
 
     /**
-     * Gets client_token
+     * Gets client_secret
      *
      * @return string|null
      */
-    public function getClientToken()
+    public function getClientSecret()
     {
-        return $this->container['client_token'];
+        return $this->container['client_secret'];
     }
 
     /**
-     * Sets client_token
+     * Sets client_secret
      *
-     * @param string|null $client_token The client token of the created account; this is provided one time only, and can be reset by signing in to the web portal
+     * @param string|null $client_secret The client token of the created account; this is provided one time only, and can be reset by signing in to the web portal
      *
      * @return self
      */
-    public function setClientToken($client_token)
+    public function setClientSecret($client_secret)
     {
-        if (is_null($client_token)) {
-            throw new \InvalidArgumentException('non-nullable client_token cannot be null');
+        if (is_null($client_secret)) {
+            throw new \InvalidArgumentException('non-nullable client_secret cannot be null');
         }
-        $this->container['client_token'] = $client_token;
+        $this->container['client_secret'] = $client_secret;
 
         return $this;
     }
